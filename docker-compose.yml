@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: root
+    volumes:
+      - ./backlog-api/tmp/db:/var/lib/mysql
+
+  backlog-api:
+    build: backlog-api/
+    command: rails s -p 3000 -b '0.0.0.0'
+    volumes:
+      - ./backlog-api:/app
+    depends_on:
+      - db
+    ports:
+      - 3000:3000
+
+  backlog-front:
+    build: backlog-front/
+    command: npm run dev
+    volumes:
+      - ./backlog-front:/app
+    ports:
+      - 8080:3000
