@@ -16,13 +16,13 @@ services:
       - ./backlog-api:/app
     depends_on:
       - db
-    ports:
-      - 3000:3000
 
   backlog-front:
     build: backlog-front/
     command: npm run dev
     volumes:
       - ./backlog-front:/app
+    depends_on:
+      - backlog-api
     ports:
       - 8080:3000
