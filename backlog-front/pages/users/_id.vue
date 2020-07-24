@@ -4,11 +4,12 @@
 
 <script>
 export default {
-  asyncData ({ $axios, params }) {
-    return $axios.$get(`http://backlog-api:3000/users/${params.id}`)
-      .then((res) => {
+  asyncData({ $axios, params }) {
+    return $axios
+      .$get(`http://backlog-api:3000/users/${params.id}`)
+      .then(res => {
         return { name: res.name }
       })
-  }
+  },
 }
 </script>
