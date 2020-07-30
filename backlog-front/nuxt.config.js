@@ -15,11 +15,18 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   css: [],
-  plugins: [],
+  plugins: [
+    'plugins/axios'
+  ],
   components: true,
   modules: [
     '@nuxtjs/axios',
   ],
-  axios: {},
+  axios: {
+    proxy: true
+  },
+  proxy: {
+    '/api/': { target: 'http://backlog-api:3000', pathRewrite: { '^/api/': '/' } }
+  },
   build: {},
 }

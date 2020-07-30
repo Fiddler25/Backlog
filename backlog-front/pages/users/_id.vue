@@ -6,7 +6,7 @@
 export default {
   asyncData({ $axios, params }) {
     return $axios
-      .$get(`http://backlog-api:3000/v1/users/${params.id}`)
+      .$get(`/api/v1/users/${params.id}`)
       .then(res => {
         return { name: res.name }
       })
