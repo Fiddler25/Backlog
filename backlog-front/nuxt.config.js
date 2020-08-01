@@ -23,7 +23,7 @@ export default {
   },
   proxy: {
     '/api/': {
-      target: 'http://backlog-api:3000',
+      target: 'http://backlog-api:3000/v1',
       pathRewrite: { '^/api/': '/' },
     },
   },

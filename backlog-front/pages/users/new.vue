@@ -26,7 +26,7 @@ export default {
   methods: {
     post() {
       this.$axios
-        .post('/api/v1/users', {
+        .post('/api/users', {
           name: this.name,
           email: this.email,
         })
