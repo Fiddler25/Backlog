@@ -1,23 +1,28 @@
 <template>
   <div>
-    <ProductBackLogsContainer />
+    <NewPBLForm />
+    <PBLContainer />
   </div>
 </template>
 
 <script>
-import ProductBackLogsContainer from '~/components/ProductBackLogsContainer.vue'
+import PBLContainer from '~/components/PBLContainer.vue'
+import NewPBLForm from '~/components/NewPBLForm.vue'
+
 export default {
   components: {
-    ProductBackLogsContainer
+    PBLContainer,
+    NewPBLForm,
   },
   data() {
     return {
-      product_back_logs: []
+      PBLs: [],
     }
   },
   async asyncData({ $axios }) {
     const data = await $axios.$get('/api/product_back_logs')
-    return { product_back_logs: data }
+    return { PBLs: data }
+  },
   }
 }
 </script>
