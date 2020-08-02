@@ -1,0 +1,2 @@
+class ProductBackLog < ApplicationRecord
+end
