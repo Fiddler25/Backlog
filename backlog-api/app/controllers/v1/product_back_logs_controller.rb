@@ -24,6 +24,12 @@ class V1::ProductBackLogsController < ::ApplicationController
     end
   end
 
+  def destroy
+    @product_back_log = ProductBackLog.find(params[:id])
+
+    @product_back_log.delete
+  end
+
   private
 
   def product_back_log_params
