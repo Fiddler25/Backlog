@@ -8,6 +8,9 @@
         <h3>説明: {{ PBL.description }}</h3>
         <h3>Story Point: {{ PBL.story_point }}</h3>
       </li>
+      <button @click="$emit('set', PBL)" type="button">
+        Edit
+      </button>
     </ul>
   </div>
 </template>

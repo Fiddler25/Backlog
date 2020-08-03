@@ -14,6 +14,16 @@ class V1::ProductBackLogsController < ::ApplicationController
     end
   end
 
+  def update
+    @product_back_log = ProductBackLog.find(params[:id])
+
+    if @product_back_log.update(product_back_log_params)
+      render json: @product_back_log
+    else
+      render json: @product_back_log.errors, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def product_back_log_params
