@@ -12,8 +12,8 @@
     "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.11.0",
-    "nuxt": "^2.13.0"
+    "@nuxtjs/axios": "^5.13.1",
+    "nuxt": "^2.15.4"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.0.0",
@@ -25,6 +25,7 @@
     "eslint-plugin-nuxt": "^1.0.0",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-vue": "^6.2.2",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "y18n": "^4.0.1"
   }
 }
